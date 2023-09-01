@@ -66,6 +66,7 @@ GROUP BY name;
 
 --What is the weight in lbs--
 Select name, ROUND(2.2*weight_kg) AS "Weight_lbs" FROM marvels;
+
 --Can you make a column of weight ranges?--
 SELECT name, weight_kg, 
 CASE
@@ -74,18 +75,8 @@ WHEN weight_kg < 100 THEN "Normal_Marvel"
     END AS "Weight_Ranges"
 FROM marvels;
 
-SELECT COUNT(*), 
-CASE
-WHEN weight_kg > 100 THEN "Large_Marvel" 
-WHEN weight_kg < 100 THEN "Normal_Marvel"
-    END AS "Weight_Ranges"
-FROM marvels
-GROUP BY Weight_Ranges;
-
 --Which marvels have intelligence above 3 and popularity above 50?--
 SELECT * FROM marvels WHERE intelligence >3 AND popularity >50;
 
---Which marvels have intelligence above 3 or popularity above 50?--
-SELECT * FROM marvels WHERE intelligence >3 OR popularity >50
 
 I was able to query this dataset using functions and statements to pull infomation that answered questions. 
